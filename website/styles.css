@@ -766,6 +766,15 @@ main {
   opacity: 0.5;
 }
 
+.footer-credit {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
 /* Legal pages (unchanged structure) */
 .site-header-compact {
   padding-bottom: 1.25rem;
