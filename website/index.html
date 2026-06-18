@@ -9,21 +9,36 @@
     />
     <title>Download U-Panel</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
     <header class="site-header">
       <div class="header-glow" aria-hidden="true"></div>
       <div class="container header-inner">
         <div class="brand-lockup animate-in" style="--delay: 0.05s">
-          <img src="assets/icon.png" width="72" height="72" alt="U-Panel app icon" class="app-icon" />
+          <img
+            src="assets/icon.png"
+            width="80"
+            height="80"
+            alt="U-Panel app icon"
+            class="app-icon"
+          />
           <div>
             <p class="eyebrow">Kampala International University</p>
+            <h1 class="site-title">U-Panel</h1>
           </div>
         </div>
-        <div class="animate-in" style="--delay: 0.18s">
+        <div class="header-copy animate-in" style="--delay: 0.18s">
           <p class="lead">
-            Official installers and web access for students, lecturers, and staff.
+            Official apps and web access for students, lecturers, and staff.
             Attendance, notices, and dashboards — on phone, PC, or browser.
           </p>
           <span class="version-pill" id="version-label">Loading version…</span>
@@ -32,10 +47,16 @@
     </header>
 
     <main class="container">
+      <div class="section-heading reveal">
+        <p class="section-eyebrow">Get the app</p>
+        <h2 class="section-title">Choose your platform</h2>
+      </div>
+
       <section class="download-grid" aria-label="Download options">
-        <article class="card animate-card" style="--delay: 0.1s">
+        <article class="card card-android animate-card" style="--delay: 0.1s">
+          <div class="card-accent" aria-hidden="true"></div>
           <div class="card-head">
-            <div class="platform-icon" aria-hidden="true">
+            <div class="platform-icon platform-icon-android" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M17.6 9.48l1.84-3.18c.16-.27.04-.62-.24-.74-2.87-1.12-6.22-1.12-9.09 0-.28.12-.4.47-.24.74l1.84 3.18c.12.2.36.31.61.28 1.44-.2 2.88-.2 4.32 0 .25.03.49-.08.61-.28zM6.79 14.58l-1.9 3.29c-.16.28-.02.63.26.75 2.92 1.15 6.34 1.15 9.26 0 .28-.12.42-.47.26-.75l-1.9-3.29c-.12-.21-.37-.32-.63-.28-1.5.22-3.01.22-4.51 0-.26-.04-.51.07-.63.28zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
@@ -43,35 +64,41 @@
               </svg>
             </div>
             <div>
-              <h2>Android</h2>
-              <p class="meta">Google Play</p>
+              <h3>Android</h3>
+              <p class="meta">Official app on Google Play</p>
             </div>
           </div>
           <ul class="req-list">
             <li>Android 7.0 (Nougat) or newer</li>
-            <li>Install from Google Play — official Android app</li>
+            <li>Secure install from Google Play</li>
             <li>Location permission for on-campus check-in</li>
           </ul>
           <p class="note" id="android-note">Checking availability…</p>
           <a
             id="android-play-store"
-            class="btn btn-play-store is-disabled"
+            class="play-badge is-disabled"
             aria-disabled="true"
             rel="noopener noreferrer"
           >
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path
-                fill="currentColor"
-                d="M3.609 1.814 13.792 12 3.61 22.186a1.004 1.004 0 0 1-.523-.095 1 1 0 0 1-.478-.406 1 1 0 0 1-.11-.568V2.883a1 1 0 0 1 .11-.568 1 1 0 0 1 .478-.406 1.004 1.004 0 0 1 .523-.095zm3.404 3.404 9.192 5.316-2.064 2.064-7.128-7.38zm0 13.764 7.128-7.38 2.064 2.064-9.192 5.316zM14.5 12.707l2.316-2.316 4.58 2.645a1 1 0 0 1 0 1.732l-4.58 2.645L14.5 12.707z"
-              />
-            </svg>
-            Get it on Google Play
+            <span class="play-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path fill="#00D9FF" d="M3.6 1.8 13.8 12 3.6 22.2a1 1 0 0 1-.52-.1 1 1 0 0 1-.48-.4 1 1 0 0 1-.11-.57V2.88a1 1 0 0 1 .11-.57 1 1 0 0 1 .48-.4 1 1 0 0 1 .52-.11z" />
+                <path fill="#FFD500" d="m7 5.2 9.2 5.3-2.06 2.06z" />
+                <path fill="#FF3A44" d="m7 18.8 7.14-7.38 2.06 2.06z" />
+                <path fill="#00F076" d="M14.5 12.7 16.8 10.4l4.58 2.65a1 1 0 0 1 0 1.73l-4.58 2.65z" />
+              </svg>
+            </span>
+            <span class="play-badge-text">
+              <span class="play-badge-eyebrow">GET IT ON</span>
+              <span class="play-badge-title">Google Play</span>
+            </span>
           </a>
         </article>
 
         <article class="card card-ios animate-card" style="--delay: 0.2s">
+          <div class="card-accent" aria-hidden="true"></div>
           <div class="card-head">
-            <div class="platform-icon" aria-hidden="true">
+            <div class="platform-icon platform-icon-ios" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M16.5 3c-.74 2.46-2.59 4.43-5 5.04.58 3.57 3.85 5.22 6.5 5.22-1.12 2.33-3.13 4.24-5.5 5.24-3.38 1.55-6.73.98-8.5-.02C2.5 16.5 1.5 12.5 3.5 8.5 5 5.5 8.5 3 12 3c1.2 0 2.4.2 3.5.5.65-.9 1.45-1.6 2.35-2.1L16.5 3z"
@@ -79,7 +106,7 @@
               </svg>
             </div>
             <div>
-              <h2>iPhone &amp; iPad</h2>
+              <h3>iPhone &amp; iPad</h3>
               <p class="meta">
                 <span class="coming-soon-badge">Coming soon</span>
                 App Store install
@@ -108,9 +135,10 @@
           </div>
         </article>
 
-        <article class="card animate-card" style="--delay: 0.3s">
+        <article class="card card-windows animate-card" style="--delay: 0.3s">
+          <div class="card-accent" aria-hidden="true"></div>
           <div class="card-head">
-            <div class="platform-icon" aria-hidden="true">
+            <div class="platform-icon platform-icon-windows" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13zM5.5 5a.5.5 0 0 0-.5.5V11h15V5.5a.5.5 0 0 0-.5-.5h-13zM5 13v5.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V13H5z"
@@ -118,37 +146,35 @@
               </svg>
             </div>
             <div>
-              <h2>Windows</h2>
+              <h3>Windows</h3>
               <p class="meta">Desktop app (64-bit)</p>
             </div>
           </div>
           <ul class="req-list">
             <li>Windows 10 or 11, 64-bit</li>
-            <li>Save the installer to your PC, then run it from your hard disk</li>
+            <li>Save the installer, then run from your hard disk</li>
             <li>Internet required for sign-in and sync</li>
           </ul>
           <p class="note" id="windows-note">Checking availability…</p>
-          <div class="card-actions">
-            <a
-              id="windows-download"
-              class="btn btn-primary is-disabled"
-              aria-disabled="true"
-            >
-              Download installer
-            </a>
-            <a
-              id="windows-helper-download"
-              class="btn btn-secondary is-disabled"
-              aria-disabled="true"
-            >
-              Download install helper (.bat)
-            </a>
-          </div>
+          <a
+            id="windows-download"
+            class="btn btn-primary is-disabled"
+            aria-disabled="true"
+          >
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+              />
+            </svg>
+            Download Windows installer
+          </a>
         </article>
 
-        <article class="card animate-card" style="--delay: 0.4s">
+        <article class="card card-web animate-card" style="--delay: 0.4s">
+          <div class="card-accent" aria-hidden="true"></div>
           <div class="card-head">
-            <div class="platform-icon" aria-hidden="true">
+            <div class="platform-icon platform-icon-web" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.93 9h-3.18a15.3 15.3 0 0 0-1.07-4.02A8.03 8.03 0 0 1 19.93 11zM12 4c.97 0 2.53 2.11 3.24 7H8.76C9.47 6.11 11.03 4 12 4zM8.14 6.98A15.3 15.3 0 0 0 7.07 11H3.89a8.03 8.03 0 0 1 4.25-4.02zM3.89 13h3.18c.25 1.45.7 2.82 1.07 4.02A8.03 8.03 0 0 1 3.89 13zm4.25 4.02c.37-1.2.82-2.57 1.07-4.02h3.24c-.71 4.89-2.27 7-3.24 7-1.01 0-2.6-2.15-3.31-7zM12 20c.97 0 2.53-2.11 3.24-7h-3.24c.71 4.89 2.27 7 3.24 7zm4.86-2.98A15.3 15.3 0 0 0 18.93 13h3.18a8.03 8.03 0 0 1-4.25 4.02zM16.76 13c-.25-1.45-.7-2.82-1.07-4.02h3.18a8.03 8.03 0 0 1-4.11 4.02z"
@@ -156,8 +182,8 @@
               </svg>
             </div>
             <div>
-              <h2>Web</h2>
-              <p class="meta">Use in Chrome, Edge, Firefox, or Safari</p>
+              <h3>Web</h3>
+              <p class="meta">Chrome, Edge, Firefox, or Safari</p>
             </div>
           </div>
           <ul class="req-list">
@@ -178,23 +204,27 @@
       </section>
 
       <section class="section reveal">
-        <h3>Install steps</h3>
+        <div class="section-heading">
+          <p class="section-eyebrow">Quick start</p>
+          <h2 class="section-title">Install steps</h2>
+        </div>
         <div class="steps">
           <div class="step reveal" style="--delay: 0.05s">
-            <strong>1. Choose platform</strong>
-            Download from Google Play or Windows, use the web app (including on
-            iPhone and iPad until the iOS app launches), and use official
-            university links only.
+            <span class="step-num">1</span>
+            <strong>Choose platform</strong>
+            Install from Google Play or Windows, use the web app on iPhone and
+            iPad until the iOS app launches, and use official university links only.
           </div>
           <div class="step reveal" style="--delay: 0.12s">
-            <strong>2. Install or open</strong>
-            Android: install from Google Play. Windows: save the installer to
-            your PC (for example Downloads), then run it. Open U-Panel from the
-            Start menu after setup. Web: sign in in your browser — no install
-            needed.
+            <span class="step-num">2</span>
+            <strong>Install or open</strong>
+            Android: install from Google Play. Windows: save the installer to your
+            PC, then run it. Open U-Panel from the Start menu after setup. Web:
+            sign in in your browser — no install needed.
           </div>
           <div class="step reveal" style="--delay: 0.19s">
-            <strong>3. Sign in</strong>
+            <span class="step-num">3</span>
+            <strong>Sign in</strong>
             Students use @studmc.kiu.ac.ug email. Staff use KIU-#### and the
             password from your administrator.
           </div>
@@ -204,7 +234,7 @@
       <section class="section reveal credits-section" id="credits">
         <div class="credits-hero">
           <p class="credits-eyebrow">With gratitude</p>
-          <h3 class="credits-title">Credits</h3>
+          <h2 class="credits-title">Credits</h2>
           <p class="credits-tagline">
             Everyone who shaped, tested, and improved U-Panel
           </p>
@@ -268,23 +298,25 @@
         </div>
       </section>
 
-      <section class="section reveal">
-        <h3>Need help?</h3>
-        <p class="note">
-          Contact your faculty or university IT support if downloads are
-          unavailable or you need help installing the app.
-        </p>
+      <section class="section reveal help-section">
+        <div class="help-card">
+          <h2 class="section-title">Need help?</h2>
+          <p class="note">
+            Contact your faculty or university IT support if downloads are
+            unavailable or you need help installing the app.
+          </p>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>
-          U-Panel · Kampala International University · Attendance &amp; notices ·
+      <div class="container footer-inner">
+        <p class="footer-brand">U-Panel · Kampala International University</p>
+        <p class="footer-links">
           <a href="#credits">Credits</a>
-          ·
+          <span aria-hidden="true">·</span>
           <a href="privacy.html">Privacy Policy</a>
-          ·
+          <span aria-hidden="true">·</span>
           <a href="delete-account.html">Delete account</a>
         </p>
       </div>

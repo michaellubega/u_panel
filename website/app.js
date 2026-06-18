@@ -53,26 +53,6 @@ function configureDownload(platform, button, noteEl, options = {}) {
   button.removeAttribute('download');
 }
 
-function configureHelperDownload(platform, button) {
-  if (!button) return;
-
-  const href = resolveDownloadUrl(platform?.helperBat);
-  const available = platform?.available === true && href;
-  if (available) {
-    button.href = href;
-    button.setAttribute('download', '');
-    button.removeAttribute('target');
-    button.classList.remove('is-disabled');
-    button.removeAttribute('aria-disabled');
-    return;
-  }
-
-  button.classList.add('is-disabled');
-  button.setAttribute('aria-disabled', 'true');
-  button.removeAttribute('href');
-  button.removeAttribute('download');
-}
-
 function configurePlayStore(playStore, button, noteEl) {
   if (!button) return false;
 
@@ -85,7 +65,6 @@ function configurePlayStore(playStore, button, noteEl) {
     button.setAttribute('rel', 'noopener noreferrer');
     button.classList.remove('is-disabled');
     button.removeAttribute('aria-disabled');
-    button.classList.add('btn-primary');
     if (noteEl) {
       const packageName = playStore?.packageName || 'com.u_panel';
       noteEl.textContent =
@@ -110,7 +89,6 @@ async function loadReleaseInfo() {
   const versionEl = document.getElementById('version-label');
   const playStoreBtn = document.getElementById('android-play-store');
   const windowsBtn = document.getElementById('windows-download');
-  const windowsHelperBtn = document.getElementById('windows-helper-download');
   const webBtn = document.getElementById('web-open');
   const iosWebBtn = document.getElementById('ios-web');
   const androidNote = document.getElementById('android-note');
@@ -132,17 +110,16 @@ async function loadReleaseInfo() {
 
     configureDownload(data.windows, windowsBtn, windowsNote, {
       noteText: data.windows?.size
-        ? `Installer: ${data.windows.size} · save to your PC, then run from your hard disk`
-        : 'Save the installer to your PC, then run it from your hard disk',
+        ? `Installer ${data.windows.size} — save to your PC, then run`
+        : 'Save the installer to your PC, then run it',
     });
-    configureHelperDownload(data.windows, windowsHelperBtn);
 
     const webUrl = data.web?.url || WEB_APP_URL;
     applyWebButton(webBtn, null, webUrl, null);
     applyWebButton(iosWebBtn, null, webUrl, null);
   } catch (_) {
     if (versionEl) versionEl.textContent = 'Release info unavailable';
-    [playStoreBtn, windowsBtn, windowsHelperBtn].forEach((btn) => {
+    [playStoreBtn, windowsBtn].forEach((btn) => {
       if (btn) {
         btn.classList.add('is-disabled');
         btn.setAttribute('aria-disabled', 'true');

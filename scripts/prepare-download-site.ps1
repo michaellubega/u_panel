@@ -1,13 +1,16 @@
 # Copies release builds into website/downloads and updates releases.json.
 # Run from the project root after:
-#   flutter build apk --release
 #   Inno Setup compile -> installer/U-Panel-<version>-windows-setup.exe
 #     (or pass -WindowsInstaller path\to\your-setup.exe)
 #     Default search: installer\, Desktop\Output\UPanelSetup.exe (OneDrive Desktop OK)
+#
+# Android is distributed via Google Play only (no APK on the download site).
 
 param(
     [string]$Version = "",
-    [string]$WindowsInstaller = ""
+    [string]$WindowsInstaller = "",
+    [string]$PlayStoreUrl = "https://play.google.com/store/apps/details?id=com.u_panel",
+    [switch]$PlayStoreUnavailable
 )
 
 $ErrorActionPreference = "Stop"
@@ -47,17 +50,20 @@ $release = [ordered]@{
     build      = $Build
     releasedAt = (Get-Date -Format "yyyy-MM-dd")
     hostBase   = $siteDomain
+    updateCheckUrl = "$siteDomain/releases.json"
     ios        = [ordered]@{
         label   = "iPhone & iPad"
         status  = "coming_soon"
         webUrl  = "https://u-panel-2026.web.app/"
         message = "Native iOS app coming soon. Use the web app in Safari for now."
     }
-    android    = [ordered]@{
-        file         = "$siteDomain/downloads/U-Panel-$Version-android.apk"
-        label        = "Android APK"
+    playStore  = [ordered]@{
+        url          = $PlayStoreUrl.Trim()
+        packageName  = "com.u_panel"
+        label        = "Google Play"
         minAndroid   = "7.0 (Nougat)"
-        available    = $false
+        available    = -not $PlayStoreUnavailable
+        message      = "Install U-Panel from Google Play - the official Android app."
     }
     windows    = [ordered]@{
         file         = "$siteDomain/downloads/U-Panel-$Version-windows-setup.exe"
@@ -115,16 +121,17 @@ function Copy-ReleaseBinary {
     }
 }
 
-$apkSrc = Join-Path $root "build\app\outputs\flutter-apk\app-release.apk"
-$apkDst = Join-Path $downloads "U-Panel-$Version-android.apk"
-if (Test-Path $apkSrc) {
-    Copy-ReleaseBinary -Source $apkSrc -Destination $apkDst
-    $release.android.available = $true
-    $release.android.size = Format-Size (Get-Item $apkDst).Length
-    Write-Host "Android: $apkDst"
-} else {
-    Write-Warning "APK not found. Run: flutter build apk --release"
-}
+Get-ChildItem -LiteralPath $downloads -Filter "*.apk" -File -ErrorAction SilentlyContinue |
+    ForEach-Object {
+        Remove-Item -LiteralPath $_.FullName -Force
+        Write-Host "Removed APK from downloads: $($_.Name)"
+    }
+
+Get-ChildItem -LiteralPath $downloads -Filter "Install-U-Panel.*" -File -ErrorAction SilentlyContinue |
+    ForEach-Object {
+        Remove-Item -LiteralPath $_.FullName -Force
+        Write-Host "Removed install helper from downloads: $($_.Name)"
+    }
 
 $winDst = Join-Path $downloads "U-Panel-$Version-windows-setup.exe"
 $winSrc = $null
@@ -264,7 +271,7 @@ if (Test-Path $webFlutterIndex) {
     Write-Host "Staged download page: $downloadDest (installers hosted on GitHub Pages, not copied)"
     Write-Host "  Web app URL:       https://u-panel-2026.web.app/"
     Write-Host "  Landing page URL:  $siteDomain/"
-    Write-Host "  APK / Windows URL: $siteDomain/downloads/"
+    Write-Host "  Windows installer URL: $siteDomain/downloads/"
 
     & (Join-Path $PSScriptRoot "finalize-web-build.ps1")
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

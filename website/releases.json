@@ -20,7 +20,6 @@
                   },
     "windows":  {
                     "file":  "https://kiu.orion13.us/downloads/U-Panel-1.0.0-windows-setup.exe",
-                    "helperBat":  "https://kiu.orion13.us/downloads/Install-U-Panel.bat",
                     "label":  "Windows installer",
                     "minWindows":  "Windows 10 (64-bit)",
                     "available":  true,
