@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -76,19 +76,36 @@
           <p class="note" id="android-note">Checking availability…</p>
           <a
             id="android-play-store"
-            class="play-store-link is-disabled"
+            class="play-store-btn is-disabled"
             aria-disabled="true"
             rel="noopener noreferrer"
             aria-label="Get U-Panel on Google Play"
           >
-            <img
-              src="assets/google-play-badge.png"
-              alt="Get it on Google Play"
-              width="189"
-              height="56"
-              class="play-store-badge"
-              loading="lazy"
-            />
+            <span class="play-store-btn__shine" aria-hidden="true"></span>
+            <span class="play-store-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  fill="#4285F4"
+                  d="M3.609 1.814 13.792 12 3.61 22.186a1.204 1.204 0 0 1-.626-.12 1.204 1.204 0 0 1-.575-.481 1.204 1.204 0 0 1-.133-.686V2.1a1.204 1.204 0 0 1 .133-.686 1.204 1.204 0 0 1 .575-.481 1.204 1.204 0 0 1 .626-.119z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M16.813 15.12 6.053 21.34l8.49-8.49z"
+                />
+                <path
+                  fill="#FBBC04"
+                  d="M16.813 8.88 6.053 2.66l8.49 8.49z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M20.16 10.81c.34.27.59.69.59 1.19s-.25.92-.59 1.19l-2.29 1.32-2.5-2.5 2.5-2.5z"
+                />
+              </svg>
+            </span>
+            <span class="play-store-btn__text">
+              <span class="play-store-btn__eyebrow">GET IT ON</span>
+              <span class="play-store-btn__title">Google Play</span>
+            </span>
           </a>
         </article>
 
