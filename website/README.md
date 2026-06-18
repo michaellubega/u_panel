@@ -1,6 +1,6 @@
 # U-Panel download website
 
-Static landing page for **Android APK**, **Windows**, and a link to the **web app**.
+Static landing page for **Google Play**, **Android APK**, **Windows**, and a link to the **web app**.
 
 ## Live URLs
 
@@ -9,12 +9,28 @@ Static landing page for **Android APK**, **Windows**, and a link to the **web ap
 | **Landing page** | https://kiu.orion13.us/ |
 | **Apex (optional)** | https://orion13.us/ |
 | **APK & Windows installer** | https://kiu.orion13.us/downloads/ |
+| **Google Play** | https://play.google.com/store/apps/details?id=com.u_panel |
 | **Web app** | https://u-panel-2026.web.app/ |
 | **Web app (alt)** | https://u-panel-2026.firebaseapp.com/ |
+| **Privacy policy** | https://kiu.orion13.us/privacy.html |
+| **Delete account** | https://kiu.orion13.us/delete-account.html |
 
 **APK and `.exe` installers are hosted on GitHub Pages** (`website/downloads/`). Firebase only hosts the Flutter web app and a mirror of this landing page (buttons link to GitHub for installers).
 
 Published on every push to `main`. Custom domain: **kiu.orion13.us** (`website/CNAME`).
+
+### Google Play
+
+- **Package name:** `com.u_panel`
+- **Store URL:** `https://play.google.com/store/apps/details?id=com.u_panel`
+- Play Console needs the **privacy policy** and **delete account** URLs above.
+- After the listing is live, regenerate `releases.json` with Play Store enabled:
+
+```powershell
+.\scripts\prepare-download-site.ps1 -PlayStoreAvailable
+```
+
+Until then, the site shows **Direct APK download** as the primary Android option.
 
 ### DNS on Spaceship (Advanced DNS)
 

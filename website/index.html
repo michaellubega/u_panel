@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Download U-Panel for Android and Windows. iPhone and iPad: use the web app (iOS app coming soon). Kampala International University."
+      content="Download U-Panel from Google Play, Windows installer, or the web app. Kampala International University."
     />
     <title>Download U-Panel</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
@@ -44,21 +44,28 @@
             </div>
             <div>
               <h2>Android</h2>
-              <p class="meta">APK for phones and tablets</p>
+              <p class="meta">Google Play</p>
             </div>
           </div>
           <ul class="req-list">
             <li>Android 7.0 (Nougat) or newer</li>
-            <li>Allow installs from your browser if prompted</li>
+            <li>Install from Google Play — official Android app</li>
             <li>Location permission for on-campus check-in</li>
           </ul>
           <p class="note" id="android-note">Checking availability…</p>
           <a
-            id="android-download"
-            class="btn btn-primary is-disabled"
+            id="android-play-store"
+            class="btn btn-play-store is-disabled"
             aria-disabled="true"
+            rel="noopener noreferrer"
           >
-            Download APK
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M3.609 1.814 13.792 12 3.61 22.186a1.004 1.004 0 0 1-.523-.095 1 1 0 0 1-.478-.406 1 1 0 0 1-.11-.568V2.883a1 1 0 0 1 .11-.568 1 1 0 0 1 .478-.406 1.004 1.004 0 0 1 .523-.095zm3.404 3.404 9.192 5.316-2.064 2.064-7.128-7.38zm0 13.764 7.128-7.38 2.064 2.064-9.192 5.316zM14.5 12.707l2.316-2.316 4.58 2.645a1 1 0 0 1 0 1.732l-4.58 2.645L14.5 12.707z"
+              />
+            </svg>
+            Get it on Google Play
           </a>
         </article>
 
@@ -117,17 +124,26 @@
           </div>
           <ul class="req-list">
             <li>Windows 10 or 11, 64-bit</li>
-            <li>Run the installer and follow the setup steps</li>
+            <li>Save the installer to your PC, then run it from your hard disk</li>
             <li>Internet required for sign-in and sync</li>
           </ul>
           <p class="note" id="windows-note">Checking availability…</p>
-          <a
-            id="windows-download"
-            class="btn btn-primary is-disabled"
-            aria-disabled="true"
-          >
-            Download installer
-          </a>
+          <div class="card-actions">
+            <a
+              id="windows-download"
+              class="btn btn-primary is-disabled"
+              aria-disabled="true"
+            >
+              Download installer
+            </a>
+            <a
+              id="windows-helper-download"
+              class="btn btn-secondary is-disabled"
+              aria-disabled="true"
+            >
+              Download install helper (.bat)
+            </a>
+          </div>
         </article>
 
         <article class="card animate-card" style="--delay: 0.4s">
@@ -166,19 +182,88 @@
         <div class="steps">
           <div class="step reveal" style="--delay: 0.05s">
             <strong>1. Choose platform</strong>
-            Download Android or Windows, use the web app (including on iPhone and
-            iPad until the iOS app launches), and use official university links only.
+            Download from Google Play or Windows, use the web app (including on
+            iPhone and iPad until the iOS app launches), and use official
+            university links only.
           </div>
           <div class="step reveal" style="--delay: 0.12s">
             <strong>2. Install or open</strong>
-            Android: open the APK and confirm install. Windows: run the
-            installer, then open U-Panel from the Start menu. Web: sign in in
-            your browser — no install needed.
+            Android: install from Google Play. Windows: save the installer to
+            your PC (for example Downloads), then run it. Open U-Panel from the
+            Start menu after setup. Web: sign in in your browser — no install
+            needed.
           </div>
           <div class="step reveal" style="--delay: 0.19s">
             <strong>3. Sign in</strong>
             Students use @studmc.kiu.ac.ug email. Staff use KIU-#### and the
             password from your administrator.
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal credits-section" id="credits">
+        <div class="credits-hero">
+          <p class="credits-eyebrow">With gratitude</p>
+          <h3 class="credits-title">Credits</h3>
+          <p class="credits-tagline">
+            Everyone who shaped, tested, and improved U-Panel
+          </p>
+        </div>
+        <div class="credits-card">
+          <p class="credits-lead">
+            U-Panel is built by <strong>Orion13 Technologies</strong> for Kampala
+            International University. We are grateful to everyone who helped bring
+            this project to life.
+          </p>
+
+          <div class="credits-grid">
+            <div class="credits-block credits-block-brand">
+              <h4>Built by</h4>
+              <p class="credits-highlight">Orion13 Technologies</p>
+              <p class="credits-sub">Official platform partner for KIU</p>
+            </div>
+
+            <div class="credits-block">
+              <h4>Q&amp;A team &amp; advisors</h4>
+              <p>
+                Special thanks to Mr. Tusubira Farooq, Dr. Irene, Dr. Raju, and
+                Mr. Eric, and the whole Q&amp;A team for assisting with
+                improvements and suggesting more enhancements to the project.
+              </p>
+            </div>
+
+            <div class="credits-block">
+              <h4>Family</h4>
+              <p>
+                With deep gratitude to our parents for their unwavering support in
+                every way throughout this journey.
+              </p>
+            </div>
+
+            <div class="credits-block credits-block-wide">
+              <h4>Computer Science student testers</h4>
+              <ul class="credits-names" aria-label="Student testers">
+                <li>Timothy Sceva</li>
+                <li>Brian Bwambale</li>
+                <li>Daphine Nanyonyi</li>
+                <li>Emmanuel Elalucu</li>
+                <li>George Akanyijuka</li>
+                <li>Immaculate Kyokunda</li>
+                <li>Mawanda Martin</li>
+                <li>Mutabazi Ronnie (WC)</li>
+                <li>Maya Maria</li>
+                <li>Shadow Adrian</li>
+                <li>Serugo Solomon Mukisa</li>
+                <li>Ahebwa Vanie</li>
+                <li>Kobusigye Warida</li>
+                <li>Walwasa Timothy</li>
+                <li>Naluwaga Aisha Muhammad</li>
+                <li>Tumusime Nicholus</li>
+                <li>Mungufeni Kennedy</li>
+                <li>Nakabugo Melisa Kibalama</li>
+                <li>Nalubega Muwonge Sumaya</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -196,6 +281,8 @@
       <div class="container">
         <p>
           U-Panel · Kampala International University · Attendance &amp; notices ·
+          <a href="#credits">Credits</a>
+          ·
           <a href="privacy.html">Privacy Policy</a>
           ·
           <a href="delete-account.html">Delete account</a>
