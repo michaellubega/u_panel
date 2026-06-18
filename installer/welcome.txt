@@ -1,0 +1,45 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║              ✦  WELCOME TO U-PANEL SETUP  ✦                  ║
+║         Kampala International University                     ║
+║    Attendance · Notices · Dashboards · Campus operations     ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+U-Panel is built by ORION13 TECHNOLOGIES for Kampala International
+University.
+
+This wizard installs U-Panel on your Windows PC. When setup completes,
+open the app from the Start menu and your desktop shortcut.
+
+──────────────────────── Before you continue ────────────────────────
+
+  • Windows 10 or 11 (64-bit)
+  • Working internet connection
+  • University email and password ready to sign in
+  • Installer saved on your local hard disk (not USB or network drive)
+
+              Click Next to choose an install location.
+
+If you are not a KIU student, lecturer, or staff member, please close
+this wizard.
+
+═══════════════════════════ CREDITS ═══════════════════════════════
+
+  Q&A team & advisors
+  Mr. Tusubira Farooq · Dr. Irene · Dr. Raju · Mr. Eric
+  and the whole Q&A team
+
+  Family
+  Our parents — thank you for your support in every way.
+
+  Computer Science student testers
+  Timothy Sceva, Brian Bwambale, Daphine Nanyonyi, Emmanuel Elalucu,
+  George Akanyijuka, Immaculate Kyokunda, Mawanda Martin,
+  Mutabazi Ronnie (WC), Maya Maria, Shadow Adrian,
+  Serugo Solomon Mukisa, Ahebwa Vanie,
+  Kobusigye Warida, Walwasa Timothy, Naluwaga Aisha Muhammad,
+  Tumusime Nicholus, Mungufeni Kennedy, Nakabugo Melisa Kibalama,
+  Nalubega Muwonge Sumaya, Walusimbi Alvin.
+
+              ORION13 TECHNOLOGIES · Kampala International University
